@@ -7,16 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="desktop">
-        <video class="video-bg" id="myVideo" autoplay muted loop>
-            <source src="Timeline 1.mp4" type="video/mp4">
+    <div class="desktop" >
+        <video class="video-bg" id="myVideo"  autoplay muted loop>
+            <source src="Timeline 1.mp4" type="video/mp4" onclick="closeMenu()">
             Your browser does not support the video tag.
         </video>
 
 
         <!-- landing_content -->
         <div id="landing_content">
-            <div id="butter"></div>
+            <div id="butter" onclick="closeMenu()"></div>
             
             <div id="logo"><b>G</b></div>
                 <p id="logo_text"><b>REEN.com</b></p>
@@ -26,14 +26,15 @@
                 <a href="" id="menu_button"><b>Webinar</b></a>
                 
                 <button id="menu_button1" onclick="openMenu()"><b>☰</b></button>
+                
             </div>
             <div id="side_menu">
                 <button id="close" onclick="closeMenu()">⏎</button><br>
-                <a href="" id="side_menu_text"><b>Energy Calculator</b></a><br><br><br><br>
-                <a href="" id="side_menu_text"><b>Move to Green</b></a><br><br><br><br>
-                <a href="" id="side_menu_text"><b>Webinar</b></a><br><br><br><br>
-                <a href="" id="side_menu_text"><b>Learn About Green</b></a><br><br><br><br>
-                <a href="" id="side_menu_text"><b>Customer Support</b></a><br><br><br><br>
+                <a href="" id="side_menu_text"><b>Energy Calculator</b></a><br><br><br>
+                <a href="" id="side_menu_text"><b>Move to Green</b></a><br><br><br>
+                <a href="" id="side_menu_text"><b>Webinar</b></a><br><br><br>
+                <a href="" id="side_menu_text"><b>Learn About Green</b></a><br><br><br>
+                <a href="" id="side_menu_text"><b>Customer Support</b></a><br><br><br>
             </div>
             <!-- <div id="mtg"><b>Move<br> To<br> Green</b></div>      -->
              <!-- <div id="move"><b>Move</b></div>
@@ -49,16 +50,18 @@
 </body>
 
 <script>
-        function openMenu(){
-            document.getElementById('side_menu').style.display = 'block';
-              
-        }
-        function closeMenu(){
-            document.getElementById('side_menu').style.display = 'none';
-                
-        }
-        // var video = document.getElementById('myVideo');
-        // video.playbackRate = 0.8; // Reduces the speed to half the normal speed
+        const toggleButton = document.getElementById('menu_button1');
+        const content = document.getElementById('side_menu');
+
+        toggleButton.addEventListener('click', function() {
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+        var video = document.getElementById('myVideo');
+        video.playbackRate = 0.5; // Reduces the speed to half the normal speed
     
 </script>
 </html>
