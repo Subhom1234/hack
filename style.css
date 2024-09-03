@@ -56,7 +56,7 @@ body{
 #menu{
     position: absolute;
     margin-top: 3vh;
-    margin-left: 35%; 
+    margin-left: 25%; 
     width: 65%;
     background-color: transparent;
     transition: transform 0.3s ease-in-out;
