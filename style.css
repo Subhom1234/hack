@@ -1,0 +1,223 @@
+body{
+    margin: 0px;
+    
+}
+.desktop{
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    padding-top: 0%;
+    position: center;
+    display: flex;
+    
+}
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    display: flex;
+    
+}
+#logo{
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 2vh; 
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    /* border: 1px solid black; */
+    position: fixed;
+    border-radius: 100%;
+    filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.244));
+    /* box-shadow: inset 0 0 20px rgba(78, 78, 78, 0.48); */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    text-align: center;
+    font-family: 'Copperplate Gothic', sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: rgb(32, 148, 32);
+}
+#logo_text{
+    position: absolute;
+    position: fixed;
+    margin-left: 5.5%;
+    margin-top: 3vh;
+    font-family: 'Copperplate Gothic', sans-serif;
+    font-size: 40px;
+    color: rgb(32, 148, 32);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.746);
+}
+#menu{
+    position: absolute;
+    margin-top: 3vh;
+    margin-left: 35%; 
+    width: 65%;
+    background-color: transparent;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    
+}
+
+a{
+    text-decoration: none;
+}
+#menu_button{
+    margin-left: 5%;
+    font-family: 'Copperplate Gothic', sans-serif;
+    font-size: 35px;
+    color: rgb(32, 148, 32); 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.871);
+    
+}
+#menu_button1{
+    margin-left: 30px;
+    font-family: 'Copperplate Gothic', sans-serif;
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+    color: rgb(32, 148, 32); 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.871);
+    cursor: pointer;
+    
+}
+#menu_button1:hover{
+    
+    color: rgb(225, 255, 0);
+}
+#menu_button:hover{
+    
+    color: rgb(225, 255, 0);
+}
+#butter{
+    position: absolute;
+    width: 100%;
+    height: 14vh;
+    background-color: rgba(211, 211, 211, 0.688);
+}
+#side_menu{
+    
+    position: absolute;
+    margin-top: 14vh; 
+    margin-left: 80%;
+    width: 20%;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.871);
+    background-color: rgba(237, 236, 236, 0.513);
+    
+    display: none;
+    text-align: center;
+}
+#close{
+    margin-top: 4vh;
+    margin-left: 5%;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(32, 148, 32); 
+    filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.244));
+    /* box-shadow: inset 0 0 20px rgba(78, 78, 78, 0.48); */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-align: center;
+}
+
+#side_menu_text{
+    font-size: 30px;
+    color: rgb(32, 148, 32);
+}
+#side_menu_text:hover{
+    color: black;
+}
+/* #mtg{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 80px;
+} */
+
+#move{
+    position: absolute;
+    font-size: 100px;
+    margin-top: 30vh;
+    margin-left: 32%;
+    color: green;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+#to{
+    position: absolute;
+    font-size: 100px;
+    margin-top: 45vh;
+    margin-left: 47%;
+    color: green;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+#green{
+    position: absolute;
+    font-size: 100px;
+    margin-top: 60vh;
+    margin-left: 54%;
+    color: green;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+#sec{
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+}
+#ther{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+@media only screen and (max-width: 600px) {
+
+    #logo{
+    
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        /* border: 1px solid black; */
+        margin-top: 1%;
+        margin-left: 1%;
+        border-radius: 100%;
+        filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.244));
+        /* box-shadow: inset 0 0 20px rgba(78, 78, 78, 0.48); */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: rgb(32, 148, 32);
+    }
+    #menue{
+        margin-top: .5%;
+        margin-left: 18%;
+        border: none;
+        background-color: transparent;
+        font-size: 28px;
+        height: 5vh;
+        color: rgb(32, 148, 32);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.607);
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+}

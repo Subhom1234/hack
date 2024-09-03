@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="desktop">
+        <video class="video-bg" id="myVideo" autoplay muted loop>
+            <source src="video/Timeline 1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+        <!-- landing_content -->
+        <div id="landing_content">
+            <div id="butter"></div>
+            
+            <div id="logo"><b>G</b></div>
+                <p id="logo_text"><b>REEN.com</b></p>
+            <div id="menu">
+                <button id="menu_button"><b>Energy Calculator</b></button>
+                <button id="menu_button"><b>Move to Green</b></button>
+                <button id="menu_button"><b>Webinar</b></button>
+                
+                
+                <!-- <button id="menu_button1" onclick="openMenu()"><b>☰</b></button> -->
+                <select id="menu_button1" name="options">
+                    <option value="option1"><b>☰</b></option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <option value="option4">Option 4</option>
+                </select>
+            </div>
+            <div id="side_menu">
+                <button id="close" onclick="closeMenu()">⏎</button><br><br><br><br><br><br>
+                <a href="" id="side_menu_text"><b>Energy Calculator</b></a><br><br><br><br>
+                <a href="" id="side_menu_text"><b>Move to Green</b></a><br><br><br><br>
+                <a href="" id="side_menu_text"><b>Webinar</b></a><br><br><br><br>
+                <a href="" id="side_menu_text"><b>Learn About Green</b></a><br><br><br><br>
+                <a href="" id="side_menu_text"><b>Customer Support</b></a><br><br><br><br>
+            </div>
+            <!-- <div id="mtg"><b>Move<br> To<br> Green</b></div>      -->
+             <!-- <div id="move"><b>Move</b></div>
+            <div id="to"><b>To</b></div>
+            <div id="green"><b>Green</b></div>     -->
+            <div id="lower">
+                <br><br><h1>About Green</h1>
+            </div>
+            <div class="slider" id="slider">
+                <div class="slides">
+                    <!-- Image 1 -->
+                    <div class="slide">
+                        <img src="Image/th-4.png" id="slide_img1" alt="Image 1" width="100%" height="100%">
+                        
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="slide">
+                        <img src="Image/th-4 (1).jpg" alt="Image 2">
+                    </div>
+                    <!-- Image 3 -->
+                    <div class="slide">
+                        <img src="Image/th-4.jpg" alt="Image 3">
+                    </div>
+                    <!-- Image 4 -->
+                    <div class="slide">
+                        <img src="Image/th-4 (1).jpg" alt="Image 3">
+                    </div>
+                    <!-- Add more images as needed -->
+                </div>
+                <button class="button prev" onclick="prevSlide()"><b><</b></button>
+                <button class="button next" onclick="nextSlide()"><b>></b></button>
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+
+<script>
+        function openMenu(){
+            document.getElementById('side_menu').style.display = 'block';
+            document.getElementById('menu').style.display = 'none';    
+        }
+        function closeMenu(){
+            document.getElementById('side_menu').style.display = 'none';
+            document.getElementById('menu').style.display = 'block';    
+        }
+        // var video = document.getElementById('myVideo');
+        // video.playbackRate = 0.8; // Reduces the speed to half the normal speed
+    
+</script>
+<script src="main.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- style -->
+
+
+
+
+
+
+
+
+body{
+    margin: 0px;
+    
+}
+.desktop{
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    padding-top: 0%;
+    position: center;
+    display: flex;
+    
+}
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    display: flex;
+    
+}
+#logo{
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 2vh; 
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    /* border: 1px solid black; */
+    
+    border-radius: 100%;
+    filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.244));
+    /* box-shadow: inset 0 0 20px rgba(78, 78, 78, 0.48); */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    text-align: center;
+    font-family: 'Copperplate Gothic', sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: rgb(32, 148, 32);
+}
+#logo_text{
+    position: absolute;
+    margin-left: 5.5%;
+    margin-top: 3vh;
+    font-family: 'Copperplate Gothic', sans-serif;
+    font-size: 40px;
+    color: rgb(32, 148, 32);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.746);
+}
+#menu{
+    position: absolute;
+    margin-top: 14vh;
+    margin-left: 0%; 
+    width: 100%;
+    height: 6vh;
+    background-color: rgba(72, 72, 71, 0.506);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    
+}
+
+a{
+    text-decoration: none;
+}
+#menu_button{
+    margin-left: 5%;
+    height: 100%;
+    font-family: 'Copperplate Gothic', sans-serif;
+    font-size: 30px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: white; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.871);
+    
+}
+#menu_button1{
+    margin-left: 30px;
+    font-family: 'Copperplate Gothic', sans-serif;
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-size: 29px;
+    height: 100%;
+    color: white; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.871);
+    cursor: pointer;
+    text-align: center;
+    
+}
+#menu_button1:hover{
+    background-color: rgb(32, 148, 32);
+    /* color: rgb(225, 255, 0); */
+}
+#menu_button:hover{
+    
+    background-color: rgb(32, 148, 32);
+    
+    
+}
+#lower{
+    margin-top: 20vh;
+    width: 100%;
+    height: 35vh;
+    background-color: rgba(38, 38, 38, 0.809);
+    text-align: center;
+    color: white;
+}
+
+#butter{
+    position: absolute;
+    width: 100%;
+    height: 14vh;
+    background-color: rgba(152, 150, 150, 0.559);
+}
+#side_menu{
+    
+    position: absolute;
+    
+    margin-left: 80%;
+    width: 20%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.513);
+    
+    display: none;
+    text-align: center;
+}
+#close{
+    margin-top: 4vh;
+    margin-left: 5%;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(32, 148, 32); 
+    filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.244));
+    /* box-shadow: inset 0 0 20px rgba(78, 78, 78, 0.48); */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-align: center;
+}
+
+#side_menu_text{
+    font-size: 30px;
+    color: rgb(32, 148, 32);
+}
+#side_menu_text:hover{
+    color: black;
+}
+/* #mtg{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 80px;
+} */
+
+#move{
+    position: absolute;
+    font-size: 100px;
+    margin-top: 30vh;
+    margin-left: 32%;
+    color: green;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+#to{
+    position: absolute;
+    font-size: 100px;
+    margin-top: 45vh;
+    margin-left: 47%;
+    color: green;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+#green{
+    position: absolute;
+    font-size: 100px;
+    margin-top: 60vh;
+    margin-left: 54%;
+    color: green;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+/* css for slidable image */
+.slider {
+    
+    width: 100%;
+    height: 45vh;
+    overflow: hidden;
+    border: none;
+   position: relative;
+    
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    font-size: 34px;
+    left: 10px;
+}
+
+.next {
+    font-size: 34px;
+    right: 10px;
+}
+/* end of slidable image */
+
+@media only screen and (max-width: 600px) {
+
+    #logo{
+    
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        /* border: 1px solid black; */
+        margin-top: 1%;
+        margin-left: 1%;
+        border-radius: 100%;
+        filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.244));
+        /* box-shadow: inset 0 0 20px rgba(78, 78, 78, 0.48); */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: rgb(32, 148, 32);
+    }
+    #menue{
+        margin-top: .5%;
+        margin-left: 18%;
+        border: none;
+        background-color: transparent;
+        font-size: 28px;
+        height: 5vh;
+        color: rgb(32, 148, 32);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.607);
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+}
