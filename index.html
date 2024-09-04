@@ -45,7 +45,267 @@
         
     </div>
     <div id="sec"></div>
-    <div id="ther"></div>
+    <div id="theird">
+        <div id="body_cal_back">
+            <center><br>
+            <h1><font id="green">Green Energy Calculater ( GEC )</font></h1><br><br>
+            
+            <b>Select Area Rural or Urban :</b><br><br>
+            <form id="selectorForm">
+                <div class="form-group">
+                    <label>
+                        <input type="radio" name="location" value="rural" onclick="updateResult()"> Rural
+                    </label>
+                    <label>
+                        <input type="radio" name="location" value="urban" onclick="updateResult()"> Urban
+                    </label>
+                </div><br><br>
+                <div class="form-group">
+                    <b><label for="userInput">Enter Previous 1 mounth Electricity cost :</label></b><br><br>
+                    <input type="text" id="userInput"><br><br>
+                </div>
+                <button type="button" onclick="calculateResult()" id="button"><b>Calculate</b></button>
+            </form> <br><br><br><br>
+        
+        
+            <h2>Total Equipment</h2><br></center>
+        
+            <h4 id="green1"><u><b>On grid</b></u></h4>
+        
+            <p><b>Solar Panel : </b> <span id="sp_on">0</span> pices <b>( Approx )</b></p>
+        
+            <p><b>Inverter & Others Accessories : </b>50-100 pices <b>( Approx )</b></p><br><br><br><br>
+        
+        
+        
+            <h4 id="green1"><u><b>Off grid</b></u></h4>
+        
+            <p><b>Solar Panel : </b> <span id="sp_off">0</span> pices <b>( Approx )</b></p>
+        
+            <p><b>Battery : </b> <span id="bt_off">0</span> pices <b>( Approx )</b></p>
+        
+            <p><b>Inverter & Others Accessories : </b>50-100 pices <b>( Approx )</b></p><br><br><br><br>
+        
+        
+        
+            <h4 id="green1"><u><b>Hybrid</b></u></h4>
+        
+            <p><b>Solar Panel : </b> <span id="sp_hy">0</span> pices <b>( Approx )</b></p>
+        
+            <p><b>Battery : </b> <span id="bt_hy">0</span> pices <b>( Approx )</b></p>
+        
+            <p><b>Inverter & Others Accessories : </b>50-100 pices <b>( Approx )</b></p><br><br><br><br>
+        
+        
+        
+        
+            <center><h2>Total Cost</h2></center><br><br>
+            <p><b>On grid :</b> ₹ <span id="result1">0</span>  <b>( Approx )</b></p><br><br>
+            <p><b>Off grid :</b> ₹ <span id="result2">0</span>  <b>( Approx )</b></p><br><br>
+            <p><b>Hybrid :</b> ₹ <span id="result3">0</span>  <b>( Approx )</b></p><br><br>
+        <center><button id="link_shop" onclick="open_aazero()"><b>Let's Move to Green</b></button></center>
+        <!-- Energy calculater js  -->
+            <script>
+                function updateResult() {
+                    // Get the selected radio button
+                    const selectedValue = document.querySelector('input[name="location"]:checked')?.value;
+        
+                    // Get the span element where the result will be displayed
+                    const resultSpan1 = document.getElementById('result1');
+                    const resultSpan2 = document.getElementById('result2');
+                    const resultSpan3 = document.getElementById('result3');
+                    const resultSpan4 = document.getElementById('sp_on');
+                    const resultSpan5 = document.getElementById('sp_off');
+                    const resultSpan6 = document.getElementById('sp_hy');
+                    const resultSpan7 = document.getElementById('bt_off');
+                    const resultSpan8 = document.getElementById('bt_hy');
+        
+                    // Get user input
+                    const userInput = parseFloat(document.getElementById('userInput').value);
+        
+                    // Initialize the result variable
+                    let result = '';
+                    let result1 = '';
+                    let result2 = '';
+                    let result3 = '';
+                    let result4 = '';
+                    let result5 = '';
+                    let result6 = '';
+                    let result7 = '';
+                    let result8 = '';
+        
+                    
+                    let u,d,h,s,so1,so2,so3,sol1,sol2,sol3,solar1,solar2,solar3,solar_cost1,solar_cost2,solar_cost3,soll2;
+                    
+        
+                    // Check if the radio button is selected and perform calculations
+                    
+                    
+                    // rural
+                    if (selectedValue === 'rural') {
+                        if (userInput <= 276) {
+                            u = userInput / 3.68;
+                            
+                            
+        
+                        } else if (userInput > 276 && userInput <= 510) {
+                            u = userInput / 5;
+                        } else if (userInput > 510 && userInput <= 1123) {
+                            u = userInput / 6.24; // Adjusted divisor for the last range
+                        }
+                        else if (userInput > 1123 && userInput <= 2067) {
+                            u = userInput / 6.89; // Adjusted divisor for the last range
+                        }
+                        else if (userInput > 2067 && userInput <= 4464) {
+                            u = userInput / 7.44; // Adjusted divisor for the last range
+                        }
+                        else if (userInput > 4464 && userInput <= 6687) {
+                            u = userInput / 7.43; // Adjusted divisor for the last range
+                        }
+                        else{
+                            u = userInput / 9.22;
+                        }
+        
+                            // real calculation
+                            
+                            console.log(u);
+                            d=u/30;
+                            console.log(d);
+                            h=d/24;
+                            console.log(h);
+                            so1 = h*8;
+                            sol1 = so1/0.250;
+                            solar1 = Math.floor(sol1);
+                            solar_cost1 = solar1*11000;
+                            result1 = solar_cost1+10000;
+                            result4 = solar1+1;
+                            console.log("r1 = ",result1);
+                            console.log("r4 = ",result4);
+        
+                            so2 = h*24;
+                            sol2 = so2/0.250;
+                            soll2 = Math.floor(sol2);
+                            solar2 = soll2+2;
+                            solar_cost2 = solar2*9000;
+                            result2 = solar_cost2+(solar_cost2/6)+10000;
+                            result5 = solar2;
+                            result7 = solar2/6;
+                            console.log("r2 = ",result2);
+                            console.log("r5 = ",result5);
+                            console.log("r6 = ",result7);
+        
+        
+                            result3 = result2+10000;
+                            result6 = result5;
+                            result8 = result7;
+                            console.log("r3 = ",result3);
+                            console.log("r7 = ",result6);
+                            console.log("r8 = ",result8);
+        
+        
+                            
+                        resultSpan1.textContent = ` ${result1.toFixed(2)}`;
+                        resultSpan2.textContent = ` ${result2.toFixed(2)}`;
+                        resultSpan3.textContent = ` ${result3.toFixed(2)}`;
+                        resultSpan4.textContent = ` ${result4.toFixed(2)}`;
+                        resultSpan5.textContent = ` ${result5.toFixed(2)}`;
+                        resultSpan6.textContent = ` ${result6.toFixed(2)}`;
+                        resultSpan7.textContent = ` ${result7.toFixed(2)}`;
+                        resultSpan8.textContent = ` ${result8.toFixed(2)}`;
+                    } 
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    // urban
+        
+        
+                    else if (selectedValue === 'urban') {
+                        if (userInput <= 513) {
+                            u = userInput / 5.03;
+                        } else if (userInput > 513 && userInput <= 1139) {
+                            u = userInput / 6.33;
+                        } else if (userInput > 1139 && userInput <= 2139) {
+                            u = userInput / 7.12; // Adjusted divisor for the last range
+                        }
+                        else if (userInput > 2139 && userInput <= 4512) {
+                            u = userInput / 7.52; // Adjusted divisor for the last range
+                        }
+                        else if (userInput > 4512 && userInput <= 6921) {
+                            u = userInput / 7.69; // Adjusted divisor for the last range
+                        }
+                        else{
+                            u = userInput / 9.22;
+                        }
+        
+                        // real calculation
+                        
+                           // real calculation
+                            
+                           console.log(u);
+                            d=u/30;
+                            console.log(d);
+                            h=d/24;
+                            console.log(h);
+                            so1 = h*8;
+                            sol1 = so1/0.250;
+                            solar1 = Math.floor(sol1);
+                            solar_cost1 = solar1*11000;
+                            result1 = solar_cost1+10000;
+                            result4 = solar1+1;
+                            console.log("r1 = ",result1);
+                            console.log("r4 = ",result4);
+        
+                            so2 = h*24;
+                            sol2 = so2/0.250;
+                            soll2 = Math.floor(sol2);
+                            solar2 = soll2+2;
+                            solar_cost2 = solar2*9000;
+                            result2 = solar_cost2+(solar_cost2/6)+10000;
+                            result5 = solar2;
+                            result7 = solar2/6;
+                            console.log("r2 = ",result2);
+                            console.log("r5 = ",result5);
+                            console.log("r6 = ",result7);
+        
+        
+                            result3 = result2+10000;
+                            result6 = result5;
+                            result8 = result7;
+                            console.log("r3 = ",result3);
+                            console.log("r7 = ",result6);
+                            console.log("r8 = ",result8);
+        
+        
+                            
+                        resultSpan1.textContent = ` ${result1.toFixed(2)}`;
+                        resultSpan2.textContent = ` ${result2.toFixed(2)}`;
+                        resultSpan3.textContent = ` ${result3.toFixed(2)}`;
+                        resultSpan4.textContent = ` ${result4.toFixed(2)}`;
+                        resultSpan5.textContent = ` ${result5.toFixed(2)}`;
+                        resultSpan6.textContent = ` ${result6.toFixed(2)}`;
+                        resultSpan7.textContent = ` ${result7.toFixed(2)}`;
+                        resultSpan8.textContent = ` ${result8.toFixed(2)}`;
+                    } else {
+                        resultSpan.textContent = '';
+                    }
+                }
+        
+                function calculateResult() {
+                    updateResult();
+                }
+                function open_aazero() {
+                    window.open("https://aazero.kesug.com/", "_blank");
+                }
+            </script>
+            
+            </div>
+    </div>
 
 </body>
 
